@@ -1,0 +1,6 @@
+recording_id,surah,ayah,start_time,end_time,transcription,phonetic_transcription,errors,annotator_1,annotator_2,final_label,created_at,audio_path
+rec_001,1,1,0.0,3.5,"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","bismi allahi alrrahmani alrrahimi","[]",qari_ahmed,qari_omar,approved,2024-01-15T10:30:00Z,s3://qari-app-audio/recordings/rec_001.wav
+rec_002,1,1,0.0,3.2,"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","bismi allahi alrrahmani alrrahimi","[{""type"":""madd_short"",""location"":""word_index:3"",""confidence"":0.85}]",qari_ahmed,qari_omar,approved,2024-01-15T10:35:00Z,s3://qari-app-audio/recordings/rec_002.wav
+rec_003,1,2,0.0,4.1,"الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ","alhamdu lillahi rabbi alalamina","[{""type"":""substituted_letter"",""letter_index"":15,""expected"":""ع"",""detected"":""ا"",""confidence"":0.78}]",qari_ahmed,qari_yusuf,needs_review,2024-01-15T10:40:00Z,s3://qari-app-audio/recordings/rec_003.wav
+rec_004,112,1,0.0,2.8,"قُلْ هُوَ اللَّهُ أَحَدٌ","qul huwa allahu ahadun","[{""type"":""qalqalah_missing"",""letter_index"":2,""expected"":""ل"",""confidence"":0.72}]",qari_omar,qari_yusuf,approved,2024-01-15T10:45:00Z,s3://qari-app-audio/recordings/rec_004.wav
+rec_005,114,1,0.0,3.0,"قُلْ أَعُوذُ بِرَبِّ النَّاسِ","qul aoodhu birabbi alnnasi","[]",qari_ahmed,qari_omar,approved,2024-01-15T10:50:00Z,s3://qari-app-audio/recordings/rec_005.wav

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  label-studio:
+    image: heartexlabs/label-studio:latest
+    container_name: qari-label-studio
+    ports:
+      - "8080:8080"
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/data
+      - DJANGO_DB=default
+      - POSTGRE_NAME=labelstudio
+      - POSTGRE_USER=postgres
+      - POSTGRE_PASSWORD=postgres
+      - POSTGRE_PORT=5432
+      - POSTGRE_HOST=label-studio-db
+    volumes:
+      - label-studio-data:/label-studio/data
+      - ./labelstudio-config:/label-studio/config
+      - ./audio-imports:/label-studio/audio-imports:ro
+    depends_on:
+      - label-studio-db
+    networks:
+      - qari-network
+  
+  label-studio-db:
+    image: postgres:15
+    container_name: label-studio-db
+    environment:
+      - POSTGRES_DB=labelstudio
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - label-studio-db-data:/var/lib/postgresql/data
+    networks:
+      - qari-network
+
+volumes:
+  label-studio-data:
+  label-studio-db-data:
+
+networks:
+  qari-network:
+    driver: bridge

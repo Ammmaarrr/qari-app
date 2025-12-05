@@ -1,0 +1,92 @@
+<View>
+  <Header value="Qari App - Tajweed Error Annotation"/>
+  
+  <!-- Audio Player -->
+  <Audio name="audio" value="$audio_url" hotkey="space"/>
+  
+  <!-- Expected Text Display -->
+  <View style="background-color: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 5px;">
+    <Header value="Expected Ayah Text" size="4"/>
+    <Text name="expected_text" value="$expected_text" style="font-size: 18px; direction: rtl;"/>
+    <Text name="ayah_reference" value="Surah: $surah | Ayah: $ayah" style="font-size: 14px; color: #666;"/>
+  </View>
+  
+  <!-- Transcription (if available) -->
+  <View style="background-color: #fff3cd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+    <Header value="ASR Transcription" size="4"/>
+    <Text name="transcription" value="$transcription" style="font-size: 16px; direction: rtl;"/>
+  </View>
+  
+  <!-- Error Type Selection -->
+  <Header value="Tajweed Errors Detected" size="3"/>
+  <Choices name="error_types" toName="audio" choice="multiple" showInline="false">
+    <Choice value="no_errors" hint="Recitation is correct"/>
+    <Choice value="substituted_letter" hint="A letter was pronounced incorrectly"/>
+    <Choice value="missing_word" hint="A word was skipped"/>
+    <Choice value="madd_short" hint="Elongation was too short"/>
+    <Choice value="madd_long" hint="Elongation was too long"/>
+    <Choice value="ghunnah_missing" hint="Nasalization was not applied"/>
+    <Choice value="ghunnah_short" hint="Nasalization was too short"/>
+    <Choice value="qalqalah_missing" hint="Qalqalah bounce was missing"/>
+    <Choice value="qalqalah_weak" hint="Qalqalah was too weak"/>
+    <Choice value="idgham_missing" hint="Idgham was not applied"/>
+    <Choice value="ikhfa_missing" hint="Ikhfa was not applied"/>
+    <Choice value="iqlab_missing" hint="Iqlab was not applied"/>
+    <Choice value="pronunciation_unclear" hint="Speech was unclear/noisy"/>
+  </Choices>
+  
+  <!-- For each error, mark the time region -->
+  <Header value="Mark Error Regions in Audio" size="3"/>
+  <View style="background-color: #e7f3ff; padding: 10px; margin: 10px 0; border-radius: 5px;">
+    <Text value="Use the audio regions tool below to highlight where each error occurs"/>
+  </View>
+  
+  <AudioPlus name="audio_regions" value="$audio_url">
+    <Labels name="error_labels" toName="audio_regions">
+      <Label value="Substituted Letter" background="#ff6b6b"/>
+      <Label value="Missing Word" background="#ffa94d"/>
+      <Label value="Madd Error" background="#74c0fc"/>
+      <Label value="Ghunnah Error" background="#8ce99a"/>
+      <Label value="Qalqalah Error" background="#ffd43b"/>
+      <Label value="Other" background="#d0d0d0"/>
+    </Labels>
+  </AudioPlus>
+  
+  <!-- Specific Letter/Word Input -->
+  <Header value="Error Details" size="3"/>
+  <View style="padding: 10px; background-color: #f1f3f5; border-radius: 5px;">
+    <TextArea name="specific_letter" toName="audio" 
+              placeholder="If letter substitution, which letter? (e.g., ق became ك)" 
+              rows="2" editable="true"/>
+    
+    <TextArea name="word_index" toName="audio" 
+              placeholder="Word index (0-based) where error occurred" 
+              rows="1" editable="true"/>
+    
+    <Number name="start_time" toName="audio" 
+            placeholder="Error start time (seconds)" 
+            min="0" step="0.01"/>
+    
+    <Number name="end_time" toName="audio" 
+            placeholder="Error end time (seconds)" 
+            min="0" step="0.01"/>
+  </View>
+  
+  <!-- Confidence/Severity -->
+  <Header value="Annotator Assessment" size="3"/>
+  <Rating name="error_severity" toName="audio" maxRating="5" 
+          icon="star" size="medium"/>
+  <Text value="1 = Minor issue, 5 = Critical error"/>
+  
+  <Choices name="annotator_confidence" toName="audio" choice="single">
+    <Choice value="certain" hint="I am 100% sure"/>
+    <Choice value="likely" hint="I am fairly confident"/>
+    <Choice value="unsure" hint="Needs second opinion"/>
+  </Choices>
+  
+  <!-- Additional Notes -->
+  <Header value="Additional Notes" size="3"/>
+  <TextArea name="notes" toName="audio" 
+            placeholder="Any additional observations or context" 
+            rows="3" editable="true"/>
+</View>

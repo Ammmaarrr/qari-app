@@ -1,0 +1,54 @@
+# FastAPI & Web
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic[email]==2.5.2
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.13.0
+redis==5.0.1
+
+# AWS/Cloud Storage
+boto3==1.33.6
+
+# Audio Processing
+pydub==0.25.1
+librosa==0.10.1
+soundfile==0.12.1
+numpy==1.26.2
+
+# ML & Deep Learning
+torch==2.1.1
+torchaudio==2.1.1
+transformers==4.36.0
+accelerate==0.25.0
+
+# ASR & Alignment
+openai-whisper==20231117
+whisperx==3.1.1
+
+# Text-to-Speech
+gTTS==2.5.0
+
+# Utilities
+python-dotenv==1.0.0
+httpx==0.25.2
+aiofiles==23.2.1
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# Code Quality
+black==23.12.0
+flake8==6.1.0
+isort==5.13.2
