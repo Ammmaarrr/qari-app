@@ -54,9 +54,12 @@ htmlcov/
 # Model files (large)
 *.pt
 *.pth
-*.bin
 *.onnx
 models/cache/
+
+# Large binary files (FFmpeg)
+backend/bin/
+*.exe
 
 # Audio files
 *.wav
