@@ -1,6 +1,7 @@
 """
 File serving routes for audio and uploads
 """
+
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 from pathlib import Path
@@ -16,10 +17,10 @@ UPLOADS_DIR = Path("uploads")
 async def get_audio_file(filename: str):
     """Serve cached audio files (TTS generated)."""
     file_path = AUDIO_CACHE_DIR / filename
-    
+
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="Audio file not found")
-    
+
     return FileResponse(
         file_path,
         media_type="audio/mpeg",
@@ -31,10 +32,10 @@ async def get_audio_file(filename: str):
 async def get_uploaded_file(file_path: str):
     """Serve uploaded files."""
     full_path = UPLOADS_DIR / file_path
-    
+
     if not full_path.exists():
         raise HTTPException(status_code=404, detail="File not found")
-    
+
     # Determine media type
     suffix = full_path.suffix.lower()
     media_types = {
@@ -45,7 +46,7 @@ async def get_uploaded_file(file_path: str):
         ".m4a": "audio/mp4",
     }
     media_type = media_types.get(suffix, "application/octet-stream")
-    
+
     return FileResponse(
         full_path,
         media_type=media_type,

@@ -1,10 +1,17 @@
 """
 Authentication routes for Qari App
 """
+
 from fastapi import APIRouter, Depends
 from ..auth import (
-    UserCreate, UserLogin, UserResponse, Token, TokenData,
-    register_user, login_user, get_current_user
+    UserCreate,
+    UserLogin,
+    UserResponse,
+    Token,
+    TokenData,
+    register_user,
+    login_user,
+    get_current_user,
 )
 
 router = APIRouter(prefix="/api/v1/auth", tags=["authentication"])
@@ -32,7 +39,7 @@ async def get_me(current_user: TokenData = Depends(get_current_user)):
 async def refresh_token(current_user: TokenData = Depends(get_current_user)):
     """Refresh access token."""
     from ..auth import create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
-    
+
     access_token = create_access_token(
         data={"sub": current_user.user_id, "email": current_user.email}
     )

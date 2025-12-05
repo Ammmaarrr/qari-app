@@ -2,6 +2,7 @@
 Text-to-Speech service for generating correction audio
 Uses gTTS for Arabic speech synthesis
 """
+
 import os
 import hashlib
 from pathlib import Path
@@ -27,19 +28,19 @@ def generate_audio(text: str, lang: str = "ar") -> Optional[str]:
     Returns the file path or None if generation fails.
     """
     cache_path = get_cache_path(text, lang)
-    
+
     # Return cached file if exists
     if cache_path.exists():
         return str(cache_path)
-    
+
     try:
         from gtts import gTTS
-        
+
         tts = gTTS(text=text, lang=lang, slow=True)
         tts.save(str(cache_path))
         logger.info(f"Generated audio for: {text[:50]}...")
         return str(cache_path)
-    
+
     except ImportError:
         logger.warning("gTTS not installed, using mock audio")
         return None
@@ -62,17 +63,17 @@ def generate_correction_audio(
         "explanation": None,
         "full_correction": None,
     }
-    
+
     # Generate correct pronunciation
     result["correct_pronunciation"] = generate_audio(correct_text, "ar")
-    
+
     # Generate explanation in Arabic
     result["explanation"] = generate_audio(explanation, "ar")
-    
+
     # Generate full correction (combined)
     full_text = f"{explanation}. {correct_text}"
     result["full_correction"] = generate_audio(full_text, "ar")
-    
+
     return result
 
 
@@ -134,36 +135,40 @@ def get_correction_for_error(error_type: str, details: dict = None) -> dict:
         "explanation": "",
         "example": "",
     }
-    
+
     if error_type == "substituted_letter" and details:
         letter = details.get("expected", "")
         if letter in CORRECTION_PHRASES["substituted_letter"]:
             phrase = CORRECTION_PHRASES["substituted_letter"][letter]
             correction["text"] = phrase["correct"]
             correction["explanation"] = phrase["explanation"]
-            
+
             # Generate audio
             audio_path = generate_audio(phrase["correct"], "ar")
             if audio_path:
-                correction["audio_url"] = f"/api/v1/audio/{os.path.basename(audio_path)}"
-    
+                correction["audio_url"] = (
+                    f"/api/v1/audio/{os.path.basename(audio_path)}"
+                )
+
     elif error_type in CORRECTION_PHRASES:
         phrase = CORRECTION_PHRASES[error_type]
         correction["explanation"] = phrase.get("explanation", "")
         correction["example"] = phrase.get("example", "")
-        
+
         if correction["example"]:
             audio_path = generate_audio(correction["example"], "ar")
             if audio_path:
-                correction["audio_url"] = f"/api/v1/audio/{os.path.basename(audio_path)}"
-    
+                correction["audio_url"] = (
+                    f"/api/v1/audio/{os.path.basename(audio_path)}"
+                )
+
     return correction
 
 
 def pregenerate_common_corrections():
     """Pre-generate audio for common corrections."""
     logger.info("Pre-generating common correction audio...")
-    
+
     for error_type, data in CORRECTION_PHRASES.items():
         if error_type == "substituted_letter":
             for letter, phrase in data.items():
@@ -174,5 +179,5 @@ def pregenerate_common_corrections():
                 generate_audio(data["explanation"], "ar")
             if "example" in data:
                 generate_audio(data["example"], "ar")
-    
+
     logger.info("Pre-generation complete")

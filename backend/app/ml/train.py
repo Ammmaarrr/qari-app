@@ -1,381 +1,269 @@
 """
-ML Training Pipeline for Tajweed Error Classification
-
-This script trains classifiers for each tajweed error type using
-labeled audio data from Label Studio.
-
-Usage:
-    python train.py --config config/training_config.yaml
+Enhanced ML Training Script for Tajweed Classifiers
+Supports multiple error types with audio feature extraction
 """
-
-import argparse
-import logging
-from pathlib import Path
-from typing import Dict, List, Tuple
-import json
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
-import torchaudio
+import librosa
 import numpy as np
+import json
+from pathlib import Path
+from typing import Dict, List, Tuple
+import argparse
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
-import wandb  # Optional: for experiment tracking
-
-# Local imports (to be implemented)
-# from models.classifier import TajweedClassifier
-# from data.dataset import TajweedDataset
-# from utils.augmentation import AudioAugmentation
+import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Audio processing parameters
+SAMPLE_RATE = 16000
+N_MFCC = 40
+N_FFT = 2048
+HOP_LENGTH = 512
+MAX_DURATION = 5.0  # seconds
 
-class TajweedDataset(Dataset):
-    """
-    Dataset for tajweed error classification
+
+class QuranAudioDataset(Dataset):
+    """Dataset for Quran audio with tajweed labels"""
     
-    Loads audio clips and their labels from Label Studio exports.
-    """
-    
-    def __init__(
-        self, 
-        data_path: str, 
-        error_type: str,
-        transform=None,
-        sample_rate: int = 16000,
-        duration: float = 1.0
-    ):
-        """
-        Args:
-            data_path: Path to Label Studio JSON export
-            error_type: Type of error to train for (e.g., 'madd_short')
-            transform: Optional audio augmentation transforms
-            sample_rate: Target sample rate
-            duration: Fixed duration for audio clips (seconds)
-        """
-        self.data_path = Path(data_path)
+    def __init__(self, manifest_path: str, error_type: str, data_dir: Path):
+        self.data_dir = data_dir
         self.error_type = error_type
-        self.transform = transform
-        self.sample_rate = sample_rate
-        self.duration = duration
-        self.target_length = int(sample_rate * duration)
+        self.samples = []
         
-        # Load annotations
-        self.samples = self._load_annotations()
-        logger.info(f"Loaded {len(self.samples)} samples for {error_type}")
-    
-    def _load_annotations(self) -> List[Dict]:
-        """Load and parse Label Studio annotations"""
-        with open(self.data_path, 'r', encoding='utf-8') as f:
-            annotations = json.load(f)
+        # Load manifest
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
         
-        samples = []
-        for item in annotations:
-            # Extract relevant fields from Label Studio export
-            audio_url = item['data'].get('audio_url', '')
-            error_types = item['annotations'][0]['result'].get('value', {}).get('choices', [])
+        # Filter for samples with this error type
+        for item in manifest:
+            audio_path = data_dir.parent / item["audio_path"]
+            if not audio_path.exists():
+                continue
             
-            # Binary label: 1 if this error type present, 0 otherwise
-            label = 1 if self.error_type in error_types else 0
+            # Check if this ayah has the specific tajweed rule
+            tajweed_rules = item.get("tajweed_rules", {})
+            has_error = error_type in tajweed_rules
             
-            # Get time boundaries if available
-            start_time = item.get('start_time', 0.0)
-            end_time = item.get('end_time', self.duration)
-            
-            samples.append({
-                'audio_path': audio_url,
-                'label': label,
-                'start_time': start_time,
-                'end_time': end_time,
-                'metadata': item
+            self.samples.append({
+                "audio_path": str(audio_path),
+                "label": 1 if has_error else 0,  # Binary classification
+                "metadata": item
             })
         
-        return samples
+        logger.info(f"Loaded {len(self.samples)} samples for {error_type}")
+        logger.info(f"Positive examples: {sum(s['label'] for s in self.samples)}")
     
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.samples)
     
-    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, int]:
+    def __getitem__(self, idx):
         sample = self.samples[idx]
         
-        # Load audio
-        waveform, sr = torchaudio.load(sample['audio_path'])
-        
-        # Resample if necessary
-        if sr != self.sample_rate:
-            resampler = torchaudio.transforms.Resample(sr, self.sample_rate)
-            waveform = resampler(waveform)
-        
-        # Convert to mono
-        if waveform.shape[0] > 1:
-            waveform = torch.mean(waveform, dim=0, keepdim=True)
-        
-        # Crop or pad to fixed length
-        if waveform.shape[1] > self.target_length:
-            waveform = waveform[:, :self.target_length]
-        elif waveform.shape[1] < self.target_length:
-            padding = self.target_length - waveform.shape[1]
-            waveform = torch.nn.functional.pad(waveform, (0, padding))
-        
-        # Apply transforms (augmentation)
-        if self.transform:
-            waveform = self.transform(waveform)
-        
-        # Convert to mel spectrogram
-        mel_transform = torchaudio.transforms.MelSpectrogram(
-            sample_rate=self.sample_rate,
-            n_fft=1024,
-            hop_length=160,
-            n_mels=64
-        )
-        mel_spec = mel_transform(waveform)
-        mel_spec = torch.log(mel_spec + 1e-9)  # Log scale
-        
-        label = sample['label']
-        
-        return mel_spec, label
+        # Load and process audio
+        try:
+            audio, sr = librosa.load(sample["audio_path"], sr=SAMPLE_RATE, duration=MAX_DURATION)
+            
+            # Extract MFCC features
+            mfcc = librosa.feature.mfcc(
+                y=audio,
+                sr=sr,
+                n_mfcc=N_MFCC,
+                n_fft=N_FFT,
+                hop_length=HOP_LENGTH
+            )
+            
+            # Normalize and pad/trim to fixed length
+            max_frames = int(MAX_DURATION * SAMPLE_RATE / HOP_LENGTH)
+            if mfcc.shape[1] < max_frames:
+                mfcc = np.pad(mfcc, ((0, 0), (0, max_frames - mfcc.shape[1])))
+            else:
+                mfcc = mfcc[:, :max_frames]
+            
+            features = torch.FloatTensor(mfcc)
+            label = torch.LongTensor([sample["label"]])
+            
+            return features, label
+            
+        except Exception as e:
+            logger.error(f"Error loading {sample['audio_path']}: {e}")
+            # Return zero tensor on error
+            max_frames = int(MAX_DURATION * SAMPLE_RATE / HOP_LENGTH)
+            return torch.zeros(N_MFCC, max_frames), torch.LongTensor([0])
 
 
-class TajweedClassifier(nn.Module):
-    """
-    Tajweed Error Classifier
+class TajweedCNN(nn.Module):
+    """CNN model for tajweed classification"""
     
-    Architecture: ResNet-18 (pretrained on ImageNet) + BiLSTM + Classifier head
-    """
-    
-    def __init__(self, num_classes: int = 2):
-        super().__init__()
+    def __init__(self, n_classes=2):
+        super(TajweedCNN, self).__init__()
         
-        # Use pretrained ResNet-18 as feature extractor
-        from torchvision.models import resnet18, ResNet18_Weights
-        resnet = resnet18(weights=ResNet18_Weights.DEFAULT)
-        
-        # Remove final classification layer
-        self.feature_extractor = nn.Sequential(*list(resnet.children())[:-2])
-        
-        # Temporal modeling with BiLSTM
-        self.lstm = nn.LSTM(
-            input_size=512,
-            hidden_size=128,
-            num_layers=2,
-            batch_first=True,
-            bidirectional=True,
-            dropout=0.3
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(1, 32, kernel_size=3, padding=1),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.MaxPool2d(2)
         )
         
-        # Classification head
-        self.classifier = nn.Sequential(
-            nn.Linear(256, 128),
+        self.conv2 = nn.Sequential(
+            nn.Conv2d(32, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(2)
+        )
+        
+        self.conv3 = nn.Sequential(
+            nn.Conv2d(64, 128, kernel_size=3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            nn.MaxPool2d(2)
+        )
+        
+        # Calculate flattened size
+        # Input: (40, max_frames) -> after 3 pools: (40/8, max_frames/8)
+        max_frames = int(MAX_DURATION * SAMPLE_RATE / HOP_LENGTH)
+        flat_size = 128 * (N_MFCC // 8) * (max_frames // 8)
+        
+        self.fc = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(flat_size, 256),
             nn.ReLU(),
             nn.Dropout(0.5),
-            nn.Linear(128, num_classes)
+            nn.Linear(256, 64),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(64, n_classes)
         )
     
     def forward(self, x):
-        # x shape: (batch, 1, n_mels, time)
+        # Add channel dimension
+        x = x.unsqueeze(1)
         
-        # Repeat grayscale to 3 channels for ResNet
-        x = x.repeat(1, 3, 1, 1)
+        x = self.conv1(x)
+        x = self.conv2(x)
+        x = self.conv3(x)
+        x = self.fc(x)
         
-        # Feature extraction
-        features = self.feature_extractor(x)  # (batch, 512, h, w)
-        
-        # Flatten spatial dimensions
-        batch, channels, h, w = features.shape
-        features = features.permute(0, 3, 1, 2).reshape(batch, w, -1)
-        
-        # LSTM
-        lstm_out, _ = self.lstm(features)  # (batch, time, 256)
-        
-        # Global average pooling over time
-        pooled = torch.mean(lstm_out, dim=1)  # (batch, 256)
-        
-        # Classification
-        logits = self.classifier(pooled)
-        
-        return logits
+        return x
 
 
-def train_one_epoch(
-    model: nn.Module,
-    dataloader: DataLoader,
-    criterion: nn.Module,
-    optimizer: optim.Optimizer,
-    device: torch.device
-) -> float:
-    """Train for one epoch"""
-    model.train()
-    total_loss = 0.0
-    
-    for batch_idx, (inputs, labels) in enumerate(dataloader):
-        inputs, labels = inputs.to(device), labels.to(device)
-        
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        
-        total_loss += loss.item()
-        
-        if batch_idx % 10 == 0:
-            logger.info(f"Batch {batch_idx}/{len(dataloader)}, Loss: {loss.item():.4f}")
-    
-    return total_loss / len(dataloader)
-
-
-def validate(
-    model: nn.Module,
-    dataloader: DataLoader,
-    criterion: nn.Module,
-    device: torch.device
-) -> Tuple[float, float]:
-    """Validate the model"""
-    model.eval()
-    total_loss = 0.0
-    correct = 0
-    total = 0
-    
-    with torch.no_grad():
-        for inputs, labels in dataloader:
-            inputs, labels = inputs.to(device), labels.to(device)
-            outputs = model(inputs)
-            loss = criterion(outputs, labels)
-            
-            total_loss += loss.item()
-            _, predicted = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
-    
-    avg_loss = total_loss / len(dataloader)
-    accuracy = 100 * correct / total
-    
-    return avg_loss, accuracy
-
-
-def main(args):
-    """Main training loop"""
-    # Set device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    logger.info(f"Using device: {device}")
-    
-    # Initialize wandb (optional)
-    if args.use_wandb:
-        wandb.init(project="qari-tajweed", config=vars(args))
+def train_model(
+    manifest_path: str,
+    error_type: str,
+    epochs: int = 30,
+    batch_size: int = 32,
+    learning_rate: float = 0.001,
+    device: str = "cuda" if torch.cuda.is_available() else "cpu"
+):
+    """Train tajweed classifier"""
+    logger.info(f"Training classifier for: {error_type}")
+    logger.info(f"Device: {device}")
     
     # Load dataset
-    dataset = TajweedDataset(
-        data_path=args.data_path,
-        error_type=args.error_type,
-        sample_rate=16000,
-        duration=1.0
-    )
+    data_dir = Path(manifest_path).parent
+    dataset = QuranAudioDataset(manifest_path, error_type, data_dir)
     
-    # Split into train/val
-    train_size = int(0.85 * len(dataset))
+    # Split train/val
+    train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
-    train_dataset, val_dataset = torch.utils.data.random_split(
-        dataset, [train_size, val_size]
-    )
+    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
     
-    # Create data loaders
-    train_loader = DataLoader(
-        train_dataset,
-        batch_size=args.batch_size,
-        shuffle=True,
-        num_workers=4
-    )
-    val_loader = DataLoader(
-        val_dataset,
-        batch_size=args.batch_size,
-        shuffle=False,
-        num_workers=4
-    )
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size)
     
     # Initialize model
-    model = TajweedClassifier(num_classes=2).to(device)
-    
-    # Loss and optimizer
+    model = TajweedCNN(n_classes=2).to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=1e-4)
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', patience=5)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     
     # Training loop
-    best_val_loss = float('inf')
-    patience_counter = 0
+    best_val_acc = 0.0
     
-    for epoch in range(args.epochs):
-        logger.info(f"\n=== Epoch {epoch+1}/{args.epochs} ===")
+    for epoch in range(epochs):
+        model.train()
+        train_loss = 0.0
+        train_correct = 0
+        train_total = 0
         
-        # Train
-        train_loss = train_one_epoch(model, train_loader, criterion, optimizer, device)
-        logger.info(f"Train Loss: {train_loss:.4f}")
+        for features, labels in train_loader:
+            features = features.to(device)
+            labels = labels.squeeze().to(device)
+            
+            optimizer.zero_grad()
+            outputs = model(features)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            
+            train_loss += loss.item()
+            _, predicted = outputs.max(1)
+            train_total += labels.size(0)
+            train_correct += predicted.eq(labels).sum().item()
         
-        # Validate
-        val_loss, val_accuracy = validate(model, val_loader, criterion, device)
-        logger.info(f"Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.2f}%")
+        # Validation
+        model.eval()
+        val_loss = 0.0
+        val_correct = 0
+        val_total = 0
         
-        # Learning rate scheduling
-        scheduler.step(val_loss)
+        with torch.no_grad():
+            for features, labels in val_loader:
+                features = features.to(device)
+                labels = labels.squeeze().to(device)
+                
+                outputs = model(features)
+                loss = criterion(outputs, labels)
+                
+                val_loss += loss.item()
+                _, predicted = outputs.max(1)
+                val_total += labels.size(0)
+                val_correct += predicted.eq(labels).sum().item()
         
-        # Log to wandb
-        if args.use_wandb:
-            wandb.log({
-                'epoch': epoch,
-                'train_loss': train_loss,
-                'val_loss': val_loss,
-                'val_accuracy': val_accuracy
-            })
+        train_acc = 100. * train_correct / train_total
+        val_acc = 100. * val_correct / val_total
+        
+        logger.info(f"Epoch {epoch+1}/{epochs}")
+        logger.info(f"  Train Loss: {train_loss/len(train_loader):.4f}, Acc: {train_acc:.2f}%")
+        logger.info(f"  Val Loss: {val_loss/len(val_loader):.4f}, Acc: {val_acc:.2f}%")
         
         # Save best model
-        if val_loss < best_val_loss:
-            best_val_loss = val_loss
-            patience_counter = 0
-            
-            checkpoint_path = Path(args.output_dir) / f"{args.error_type}_best.pth"
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            model_path = data_dir / f"model_{error_type}.pth"
             torch.save({
                 'epoch': epoch,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
-                'val_loss': val_loss,
-                'val_accuracy': val_accuracy
-            }, checkpoint_path)
-            logger.info(f"Saved best model to {checkpoint_path}")
-        else:
-            patience_counter += 1
-        
-        # Early stopping
-        if patience_counter >= args.patience:
-            logger.info(f"Early stopping triggered after {epoch+1} epochs")
-            break
+                'val_acc': val_acc,
+            }, model_path)
+            logger.info(f"  ✓ Saved best model (val_acc: {val_acc:.2f}%)")
     
-    logger.info("Training complete!")
+    logger.info(f"\nTraining complete! Best validation accuracy: {best_val_acc:.2f}%")
+    return model
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Train tajweed error classifier")
-    parser.add_argument('--data_path', type=str, required=True, 
-                        help='Path to Label Studio JSON export')
-    parser.add_argument('--error_type', type=str, required=True,
-                        choices=['madd_short', 'madd_long', 'ghunnah_missing', 
-                                'qalqalah_missing', 'substituted_letter'],
-                        help='Type of error to train for')
-    parser.add_argument('--output_dir', type=str, default='./models/checkpoints',
-                        help='Directory to save model checkpoints')
-    parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--epochs', type=int, default=30)
-    parser.add_argument('--learning_rate', type=float, default=1e-4)
-    parser.add_argument('--patience', type=int, default=5,
-                        help='Early stopping patience')
-    parser.add_argument('--use_wandb', action='store_true',
-                        help='Use Weights & Biases for logging')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--manifest", default="data/ml_training/training_manifest.json")
+    parser.add_argument("--error_type", default="madd_2", choices=[
+        "madd_2", "madd_6", "madd_246", "madd_muttasil", "madd_munfasil",
+        "ghunnah", "idghaam_ghunnah", "idghaam_no_ghunnah",
+        "ikhfa", "ikhfa_shafawi", "iqlab", "qalqalah"
+    ])
+    parser.add_argument("--epochs", type=int, default=30)
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--lr", type=float, default=0.001)
     
     args = parser.parse_args()
     
-    # Create output directory
-    Path(args.output_dir).mkdir(parents=True, exist_ok=True)
-    
-    main(args)
+    train_model(
+        manifest_path=args.manifest,
+        error_type=args.error_type,
+        epochs=args.epochs,
+        batch_size=args.batch_size,
+        learning_rate=args.lr
+    )

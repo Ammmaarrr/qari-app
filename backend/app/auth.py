@@ -2,6 +2,7 @@
 Authentication module for Qari App
 JWT-based authentication with password hashing
 """
+
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import Depends, HTTPException, status
@@ -12,7 +13,9 @@ from pydantic import BaseModel, EmailStr
 import os
 
 # Security settings
-SECRET_KEY = os.getenv("JWT_SECRET_KEY", "qari-app-super-secret-key-change-in-production")
+SECRET_KEY = os.getenv(
+    "JWT_SECRET_KEY", "qari-app-super-secret-key-change-in-production"
+)
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 24 hours
 
@@ -99,7 +102,7 @@ def decode_token(token: str) -> TokenData:
 
 
 async def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(security)
+    credentials: HTTPAuthorizationCredentials = Depends(security),
 ) -> TokenData:
     """Dependency to get the current authenticated user."""
     token = credentials.credentials
@@ -109,7 +112,7 @@ async def get_current_user(
 def register_user(user_data: UserCreate) -> UserResponse:
     """Register a new user."""
     import uuid
-    
+
     # Check if email already exists
     for user in users_db.values():
         if user["email"] == user_data.email:
@@ -117,11 +120,11 @@ def register_user(user_data: UserCreate) -> UserResponse:
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Email already registered",
             )
-    
+
     # Create user
     user_id = str(uuid.uuid4())
     hashed_password = get_password_hash(user_data.password)
-    
+
     user = {
         "id": user_id,
         "email": user_data.email,
@@ -130,7 +133,7 @@ def register_user(user_data: UserCreate) -> UserResponse:
         "created_at": datetime.utcnow(),
     }
     users_db[user_id] = user
-    
+
     return UserResponse(
         id=user_id,
         email=user_data.email,
@@ -157,11 +160,9 @@ def login_user(login_data: UserLogin) -> Token:
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password",
         )
-    
-    access_token = create_access_token(
-        data={"sub": user["id"], "email": user["email"]}
-    )
-    
+
+    access_token = create_access_token(data={"sub": user["id"], "email": user["email"]})
+
     return Token(
         access_token=access_token,
         expires_in=ACCESS_TOKEN_EXPIRE_MINUTES * 60,

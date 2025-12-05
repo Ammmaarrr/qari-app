@@ -2,6 +2,7 @@
 S3 Storage service for audio files
 Handles upload, download, and management of audio recordings
 """
+
 import os
 import uuid
 import logging
@@ -27,6 +28,7 @@ def get_s3_client():
     """Get boto3 S3 client."""
     try:
         import boto3
+
         return boto3.client(
             "s3",
             region_name=S3_REGION,
@@ -61,7 +63,7 @@ async def upload_audio(
     file_key = generate_file_key(user_id, "recordings")
     extension = Path(filename).suffix or ".webm"
     full_key = f"{file_key}{extension}"
-    
+
     if USE_LOCAL_STORAGE or not AWS_ACCESS_KEY:
         # Use local storage
         return await _upload_local(file_data, full_key, content_type)
@@ -79,14 +81,14 @@ async def _upload_local(
     # Create directory structure
     file_path = LOCAL_STORAGE_DIR / file_key
     file_path.parent.mkdir(parents=True, exist_ok=True)
-    
+
     # Write file
     content = file_data.read()
     with open(file_path, "wb") as f:
         f.write(content)
-    
+
     logger.info(f"Saved file locally: {file_path}")
-    
+
     return {
         "url": f"/api/v1/files/{file_key}",
         "key": file_key,
@@ -104,26 +106,26 @@ async def _upload_s3(
     s3_client = get_s3_client()
     if not s3_client:
         return await _upload_local(file_data, file_key, content_type)
-    
+
     try:
         content = file_data.read()
-        
+
         s3_client.put_object(
             Bucket=S3_BUCKET,
             Key=file_key,
             Body=content,
             ContentType=content_type,
         )
-        
+
         # Generate presigned URL
         url = s3_client.generate_presigned_url(
             "get_object",
             Params={"Bucket": S3_BUCKET, "Key": file_key},
             ExpiresIn=3600 * 24,  # 24 hours
         )
-        
+
         logger.info(f"Uploaded to S3: {file_key}")
-        
+
         return {
             "url": url,
             "key": file_key,
@@ -144,11 +146,11 @@ async def get_audio_url(file_key: str) -> Optional[str]:
         if file_path.exists():
             return f"/api/v1/files/{file_key}"
         return None
-    
+
     s3_client = get_s3_client()
     if not s3_client:
         return None
-    
+
     try:
         url = s3_client.generate_presigned_url(
             "get_object",
@@ -169,11 +171,11 @@ async def delete_audio(file_key: str) -> bool:
             file_path.unlink()
             return True
         return False
-    
+
     s3_client = get_s3_client()
     if not s3_client:
         return False
-    
+
     try:
         s3_client.delete_object(Bucket=S3_BUCKET, Key=file_key)
         return True
@@ -185,41 +187,45 @@ async def delete_audio(file_key: str) -> bool:
 async def list_user_recordings(user_id: str, limit: int = 50) -> list:
     """List all recordings for a user."""
     prefix = f"recordings/{user_id}/"
-    
+
     if USE_LOCAL_STORAGE or not AWS_ACCESS_KEY:
         user_dir = LOCAL_STORAGE_DIR / "recordings" / user_id
         if not user_dir.exists():
             return []
-        
+
         files = []
         for file_path in user_dir.rglob("*"):
             if file_path.is_file():
                 rel_path = file_path.relative_to(LOCAL_STORAGE_DIR)
-                files.append({
-                    "key": str(rel_path),
-                    "size": file_path.stat().st_size,
-                    "modified": datetime.fromtimestamp(file_path.stat().st_mtime),
-                })
+                files.append(
+                    {
+                        "key": str(rel_path),
+                        "size": file_path.stat().st_size,
+                        "modified": datetime.fromtimestamp(file_path.stat().st_mtime),
+                    }
+                )
         return files[:limit]
-    
+
     s3_client = get_s3_client()
     if not s3_client:
         return []
-    
+
     try:
         response = s3_client.list_objects_v2(
             Bucket=S3_BUCKET,
             Prefix=prefix,
             MaxKeys=limit,
         )
-        
+
         files = []
         for obj in response.get("Contents", []):
-            files.append({
-                "key": obj["Key"],
-                "size": obj["Size"],
-                "modified": obj["LastModified"],
-            })
+            files.append(
+                {
+                    "key": obj["Key"],
+                    "size": obj["Size"],
+                    "modified": obj["LastModified"],
+                }
+            )
         return files
     except Exception as e:
         logger.error(f"Failed to list S3 objects: {e}")
@@ -229,9 +235,9 @@ async def list_user_recordings(user_id: str, limit: int = 50) -> list:
 def get_storage_stats(user_id: str) -> dict:
     """Get storage usage statistics for a user."""
     recordings = list_user_recordings(user_id, limit=1000)
-    
+
     total_size = sum(r.get("size", 0) for r in recordings)
-    
+
     return {
         "total_files": len(recordings),
         "total_size_bytes": total_size,

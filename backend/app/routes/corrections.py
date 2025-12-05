@@ -2,6 +2,7 @@
 Correction audio endpoints
 GET /api/v1/correction/audio/{id}
 """
+
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse, RedirectResponse
 from pathlib import Path
@@ -30,32 +31,30 @@ CORRECTION_AUDIO_MAPPING = {
 async def get_correction_audio(correction_id: str):
     """
     Get correction audio sample by ID.
-    
+
     Returns audio file demonstrating correct pronunciation.
     In production, this would serve from S3/CDN.
     """
     logger.info(f"Fetching correction audio: {correction_id}")
-    
+
     # Check if correction exists
     if correction_id not in CORRECTION_AUDIO_MAPPING:
         raise HTTPException(status_code=404, detail="Correction audio not found")
-    
+
     # In production, return S3 presigned URL or CDN URL
     # For development, serve local file
     audio_path = Path(f"/app/audio/{CORRECTION_AUDIO_MAPPING[correction_id]}")
-    
+
     if audio_path.exists():
         return FileResponse(
-            audio_path,
-            media_type="audio/mpeg",
-            filename=f"{correction_id}.mp3"
+            audio_path, media_type="audio/mpeg", filename=f"{correction_id}.mp3"
         )
     else:
         # Return placeholder URL for development
         return {
             "correction_id": correction_id,
             "audio_url": f"https://storage.example.com/corrections/{correction_id}.mp3",
-            "message": "Audio file not found locally. URL is placeholder."
+            "message": "Audio file not found locally. URL is placeholder.",
         }
 
 
@@ -67,13 +66,13 @@ async def get_correction_audio_url(correction_id: str):
     """
     if correction_id not in CORRECTION_AUDIO_MAPPING:
         raise HTTPException(status_code=404, detail="Correction audio not found")
-    
+
     # In production, generate S3 presigned URL
     # For now, return placeholder
     return {
         "correction_id": correction_id,
         "url": f"https://{settings.S3_BUCKET_NAME}.s3.amazonaws.com/corrections/{correction_id}.mp3",
-        "expires_in": 3600
+        "expires_in": 3600,
     }
 
 
@@ -84,7 +83,6 @@ async def list_corrections():
     """
     return {
         "corrections": [
-            {"id": k, "path": v} 
-            for k, v in CORRECTION_AUDIO_MAPPING.items()
+            {"id": k, "path": v} for k, v in CORRECTION_AUDIO_MAPPING.items()
         ]
     }

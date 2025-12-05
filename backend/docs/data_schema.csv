@@ -1,0 +1,9 @@
+recording_id,surah,ayah,start_time,end_time,audio_path,transcription,phonetic_transcription,errors
+rec_001,1,1,0.0,3.5,recordings/rec_001.wav,بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ,bismi llahi rraHmaani rraHiimi,"[]"
+rec_002,1,2,0.0,4.2,recordings/rec_002.wav,الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ,alHamdu lillaahi rabbi l?aalamiin,"[]"
+rec_003,1,1,0.0,3.2,recordings/rec_003.wav,بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ,bismi llahi rraHmaani rraHiimi,"[{""type"":""madd_short"",""location"":""word_index:3"",""confidence"":0.8}]"
+rec_004,1,1,0.0,3.8,recordings/rec_004.wav,بِسْمِ اللَّكِ الرَّحْمَٰنِ الرَّحِيمِ,bismi llaki rraHmaani rraHiimi,"[{""type"":""substituted_letter"",""letter_index"":9,""expected"":""ه"",""detected"":""ك"",""confidence"":0.9}]"
+rec_005,112,1,0.0,2.5,recordings/rec_005.wav,قُلْ هُوَ اللَّهُ أَحَدٌ,qul huwa llaahu aHad,"[]"
+rec_006,112,1,0.0,2.3,recordings/rec_006.wav,كُلْ هُوَ اللَّهُ أَحَدٌ,kul huwa llaahu aHad,"[{""type"":""substituted_letter"",""letter_index"":0,""expected"":""ق"",""detected"":""ك"",""confidence"":0.92}]"
+rec_007,1,3,0.0,2.8,recordings/rec_007.wav,الرَّحْمَٰنِ الرَّحِيمِ,arraHmaani rraHiimi,"[{""type"":""ghunnah_missing"",""letter"":""ن"",""confidence"":0.75}]"
+rec_008,112,4,0.0,3.0,recordings/rec_008.wav,وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ,wa lam yakun lahu kufuwan aHad,"[{""type"":""qalqalah_missing"",""letter"":""د"",""confidence"":0.7}]"

@@ -1,0 +1,2946 @@
+[
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001001.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 25,
+        "rule": "madd_2",
+        "start": 24
+      },
+      {
+        "end": 29,
+        "rule": "hamzat_wasl",
+        "start": 28
+      },
+      {
+        "end": 30,
+        "rule": "lam_shamsiyyah",
+        "start": 29
+      },
+      {
+        "end": 36,
+        "rule": "madd_246",
+        "start": 35
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001001.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 25,
+        "rule": "madd_2",
+        "start": 24
+      },
+      {
+        "end": 29,
+        "rule": "hamzat_wasl",
+        "start": 28
+      },
+      {
+        "end": 30,
+        "rule": "lam_shamsiyyah",
+        "start": 29
+      },
+      {
+        "end": 36,
+        "rule": "madd_246",
+        "start": 35
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001001.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 25,
+        "rule": "madd_2",
+        "start": 24
+      },
+      {
+        "end": 29,
+        "rule": "hamzat_wasl",
+        "start": 28
+      },
+      {
+        "end": 30,
+        "rule": "lam_shamsiyyah",
+        "start": 29
+      },
+      {
+        "end": 36,
+        "rule": "madd_246",
+        "start": 35
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001001.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 25,
+        "rule": "madd_2",
+        "start": 24
+      },
+      {
+        "end": 29,
+        "rule": "hamzat_wasl",
+        "start": 28
+      },
+      {
+        "end": 30,
+        "rule": "lam_shamsiyyah",
+        "start": 29
+      },
+      {
+        "end": 36,
+        "rule": "madd_246",
+        "start": 35
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001002.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "madd_2",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 25,
+        "rule": "hamzat_wasl",
+        "start": 24
+      },
+      {
+        "end": 30,
+        "rule": "madd_2",
+        "start": 29
+      },
+      {
+        "end": 35,
+        "rule": "madd_246",
+        "start": 34
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001002.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "madd_2",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 25,
+        "rule": "hamzat_wasl",
+        "start": 24
+      },
+      {
+        "end": 30,
+        "rule": "madd_2",
+        "start": 29
+      },
+      {
+        "end": 35,
+        "rule": "madd_246",
+        "start": 34
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001002.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "madd_2",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 25,
+        "rule": "hamzat_wasl",
+        "start": 24
+      },
+      {
+        "end": 30,
+        "rule": "madd_2",
+        "start": 29
+      },
+      {
+        "end": 35,
+        "rule": "madd_246",
+        "start": 34
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001002.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "madd_2",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 25,
+        "rule": "hamzat_wasl",
+        "start": 24
+      },
+      {
+        "end": 30,
+        "rule": "madd_2",
+        "start": 29
+      },
+      {
+        "end": 35,
+        "rule": "madd_246",
+        "start": 34
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001003.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 3,
+    "tajweed_rules": [
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 2,
+        "rule": "lam_shamsiyyah",
+        "start": 1
+      },
+      {
+        "end": 10,
+        "rule": "madd_2",
+        "start": 9
+      },
+      {
+        "end": 14,
+        "rule": "hamzat_wasl",
+        "start": 13
+      },
+      {
+        "end": 15,
+        "rule": "lam_shamsiyyah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001003.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 3,
+    "tajweed_rules": [
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 2,
+        "rule": "lam_shamsiyyah",
+        "start": 1
+      },
+      {
+        "end": 10,
+        "rule": "madd_2",
+        "start": 9
+      },
+      {
+        "end": 14,
+        "rule": "hamzat_wasl",
+        "start": 13
+      },
+      {
+        "end": 15,
+        "rule": "lam_shamsiyyah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001003.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 3,
+    "tajweed_rules": [
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 2,
+        "rule": "lam_shamsiyyah",
+        "start": 1
+      },
+      {
+        "end": 10,
+        "rule": "madd_2",
+        "start": 9
+      },
+      {
+        "end": 14,
+        "rule": "hamzat_wasl",
+        "start": 13
+      },
+      {
+        "end": 15,
+        "rule": "lam_shamsiyyah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001003.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 3,
+    "tajweed_rules": [
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 2,
+        "rule": "lam_shamsiyyah",
+        "start": 1
+      },
+      {
+        "end": 10,
+        "rule": "madd_2",
+        "start": 9
+      },
+      {
+        "end": 14,
+        "rule": "hamzat_wasl",
+        "start": 13
+      },
+      {
+        "end": 15,
+        "rule": "lam_shamsiyyah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001004.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 4,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 3,
+        "rule": "madd_2",
+        "start": 2
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001004.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 4,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 3,
+        "rule": "madd_2",
+        "start": 2
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001004.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 4,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 3,
+        "rule": "madd_2",
+        "start": 2
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001004.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 4,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 3,
+        "rule": "madd_2",
+        "start": 2
+      },
+      {
+        "end": 16,
+        "rule": "hamzat_wasl",
+        "start": 15
+      },
+      {
+        "end": 17,
+        "rule": "lam_shamsiyyah",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "madd_246",
+        "start": 20
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001005.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 5,
+    "tajweed_rules": [
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 38,
+        "rule": "madd_246",
+        "start": 37
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001005.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 5,
+    "tajweed_rules": [
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 38,
+        "rule": "madd_246",
+        "start": 37
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001005.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 5,
+    "tajweed_rules": [
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 38,
+        "rule": "madd_246",
+        "start": 37
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001005.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 5,
+    "tajweed_rules": [
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 38,
+        "rule": "madd_246",
+        "start": 37
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001006.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 10,
+        "rule": "hamzat_wasl",
+        "start": 9
+      },
+      {
+        "end": 11,
+        "rule": "lam_shamsiyyah",
+        "start": 10
+      },
+      {
+        "end": 17,
+        "rule": "madd_2",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "hamzat_wasl",
+        "start": 20
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001006.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 10,
+        "rule": "hamzat_wasl",
+        "start": 9
+      },
+      {
+        "end": 11,
+        "rule": "lam_shamsiyyah",
+        "start": 10
+      },
+      {
+        "end": 17,
+        "rule": "madd_2",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "hamzat_wasl",
+        "start": 20
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001006.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 10,
+        "rule": "hamzat_wasl",
+        "start": 9
+      },
+      {
+        "end": 11,
+        "rule": "lam_shamsiyyah",
+        "start": 10
+      },
+      {
+        "end": 17,
+        "rule": "madd_2",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "hamzat_wasl",
+        "start": 20
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001006.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_2",
+      "hamzat_wasl",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 10,
+        "rule": "hamzat_wasl",
+        "start": 9
+      },
+      {
+        "end": 11,
+        "rule": "lam_shamsiyyah",
+        "start": 10
+      },
+      {
+        "end": 17,
+        "rule": "madd_2",
+        "start": 16
+      },
+      {
+        "end": 21,
+        "rule": "hamzat_wasl",
+        "start": 20
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_001\\001007.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 1,
+    "ayah": 7,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_6",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 48,
+        "rule": "hamzat_wasl",
+        "start": 47
+      },
+      {
+        "end": 78,
+        "rule": "hamzat_wasl",
+        "start": 77
+      },
+      {
+        "end": 79,
+        "rule": "lam_shamsiyyah",
+        "start": 78
+      },
+      {
+        "end": 84,
+        "rule": "madd_6",
+        "start": 82
+      },
+      {
+        "end": 88,
+        "rule": "madd_246",
+        "start": 87
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_001\\001007.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 1,
+    "ayah": 7,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_6",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 48,
+        "rule": "hamzat_wasl",
+        "start": 47
+      },
+      {
+        "end": 78,
+        "rule": "hamzat_wasl",
+        "start": 77
+      },
+      {
+        "end": 79,
+        "rule": "lam_shamsiyyah",
+        "start": 78
+      },
+      {
+        "end": 84,
+        "rule": "madd_6",
+        "start": 82
+      },
+      {
+        "end": 88,
+        "rule": "madd_246",
+        "start": 87
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_001\\001007.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 1,
+    "ayah": 7,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_6",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 48,
+        "rule": "hamzat_wasl",
+        "start": 47
+      },
+      {
+        "end": 78,
+        "rule": "hamzat_wasl",
+        "start": 77
+      },
+      {
+        "end": 79,
+        "rule": "lam_shamsiyyah",
+        "start": 78
+      },
+      {
+        "end": 84,
+        "rule": "madd_6",
+        "start": 82
+      },
+      {
+        "end": 88,
+        "rule": "madd_246",
+        "start": 87
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_001\\001007.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 1,
+    "ayah": 7,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "madd_6",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 48,
+        "rule": "hamzat_wasl",
+        "start": 47
+      },
+      {
+        "end": 78,
+        "rule": "hamzat_wasl",
+        "start": 77
+      },
+      {
+        "end": 79,
+        "rule": "lam_shamsiyyah",
+        "start": 78
+      },
+      {
+        "end": 84,
+        "rule": "madd_6",
+        "start": 82
+      },
+      {
+        "end": 88,
+        "rule": "madd_246",
+        "start": 87
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_112\\112001.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 112,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 50,
+        "rule": "hamzat_wasl",
+        "start": 49
+      },
+      {
+        "end": 62,
+        "rule": "qalqalah",
+        "start": 61
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_112\\112001.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 112,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 50,
+        "rule": "hamzat_wasl",
+        "start": 49
+      },
+      {
+        "end": 62,
+        "rule": "qalqalah",
+        "start": 61
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_112\\112001.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 112,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 50,
+        "rule": "hamzat_wasl",
+        "start": 49
+      },
+      {
+        "end": 62,
+        "rule": "qalqalah",
+        "start": 61
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_112\\112001.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 112,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 50,
+        "rule": "hamzat_wasl",
+        "start": 49
+      },
+      {
+        "end": 62,
+        "rule": "qalqalah",
+        "start": 61
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_112\\112002.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 112,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 16,
+        "rule": "qalqalah",
+        "start": 15
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_112\\112002.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 112,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 16,
+        "rule": "qalqalah",
+        "start": 15
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_112\\112002.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 112,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 16,
+        "rule": "qalqalah",
+        "start": 15
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_112\\112002.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 112,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 16,
+        "rule": "qalqalah",
+        "start": 15
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_112\\112003.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 112,
+    "ayah": 3,
+    "tajweed_rules": [
+      "qalqalah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 11,
+        "rule": "qalqalah",
+        "start": 9
+      },
+      {
+        "end": 26,
+        "rule": "qalqalah",
+        "start": 24
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_112\\112003.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 112,
+    "ayah": 3,
+    "tajweed_rules": [
+      "qalqalah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 11,
+        "rule": "qalqalah",
+        "start": 9
+      },
+      {
+        "end": 26,
+        "rule": "qalqalah",
+        "start": 24
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_112\\112003.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 112,
+    "ayah": 3,
+    "tajweed_rules": [
+      "qalqalah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 11,
+        "rule": "qalqalah",
+        "start": 9
+      },
+      {
+        "end": 26,
+        "rule": "qalqalah",
+        "start": 24
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_112\\112003.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 112,
+    "ayah": 3,
+    "tajweed_rules": [
+      "qalqalah",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 11,
+        "rule": "qalqalah",
+        "start": 9
+      },
+      {
+        "end": 26,
+        "rule": "qalqalah",
+        "start": 24
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_112\\112004.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 112,
+    "ayah": 4,
+    "tajweed_rules": [
+      "idghaam_no_ghunnah",
+      "madd_2",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 16,
+        "rule": "idghaam_no_ghunnah",
+        "start": 11
+      },
+      {
+        "end": 19,
+        "rule": "madd_2",
+        "start": 18
+      },
+      {
+        "end": 33,
+        "rule": "qalqalah",
+        "start": 32
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_112\\112004.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 112,
+    "ayah": 4,
+    "tajweed_rules": [
+      "idghaam_no_ghunnah",
+      "madd_2",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 16,
+        "rule": "idghaam_no_ghunnah",
+        "start": 11
+      },
+      {
+        "end": 19,
+        "rule": "madd_2",
+        "start": 18
+      },
+      {
+        "end": 33,
+        "rule": "qalqalah",
+        "start": 32
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_112\\112004.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 112,
+    "ayah": 4,
+    "tajweed_rules": [
+      "idghaam_no_ghunnah",
+      "madd_2",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 16,
+        "rule": "idghaam_no_ghunnah",
+        "start": 11
+      },
+      {
+        "end": 19,
+        "rule": "madd_2",
+        "start": 18
+      },
+      {
+        "end": 33,
+        "rule": "qalqalah",
+        "start": 32
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_112\\112004.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 112,
+    "ayah": 4,
+    "tajweed_rules": [
+      "idghaam_no_ghunnah",
+      "madd_2",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 16,
+        "rule": "idghaam_no_ghunnah",
+        "start": 11
+      },
+      {
+        "end": 19,
+        "rule": "madd_2",
+        "start": 18
+      },
+      {
+        "end": 33,
+        "rule": "qalqalah",
+        "start": 32
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_113\\113001.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 113,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 68,
+        "rule": "qalqalah",
+        "start": 67
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_113\\113001.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 113,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 68,
+        "rule": "qalqalah",
+        "start": 67
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_113\\113001.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 113,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 68,
+        "rule": "qalqalah",
+        "start": 67
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_113\\113001.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 113,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 68,
+        "rule": "qalqalah",
+        "start": 67
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_113\\113002.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 113,
+    "ayah": 2,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 19,
+        "rule": "qalqalah",
+        "start": 18
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_113\\113002.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 113,
+    "ayah": 2,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 19,
+        "rule": "qalqalah",
+        "start": 18
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_113\\113002.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 113,
+    "ayah": 2,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 19,
+        "rule": "qalqalah",
+        "start": 18
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_113\\113002.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 113,
+    "ayah": 2,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 19,
+        "rule": "qalqalah",
+        "start": 18
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_113\\113003.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 113,
+    "ayah": 3,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_113\\113003.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 113,
+    "ayah": 3,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_113\\113003.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 113,
+    "ayah": 3,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_113\\113003.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 113,
+    "ayah": 3,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_113\\113004.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 113,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_2",
+      "madd_2",
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 13,
+        "rule": "hamzat_wasl",
+        "start": 12
+      },
+      {
+        "end": 14,
+        "rule": "lam_shamsiyyah",
+        "start": 13
+      },
+      {
+        "end": 17,
+        "rule": "ghunnah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_2",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_2",
+        "start": 23
+      },
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 39,
+        "rule": "qalqalah",
+        "start": 38
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_113\\113004.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 113,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_2",
+      "madd_2",
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 13,
+        "rule": "hamzat_wasl",
+        "start": 12
+      },
+      {
+        "end": 14,
+        "rule": "lam_shamsiyyah",
+        "start": 13
+      },
+      {
+        "end": 17,
+        "rule": "ghunnah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_2",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_2",
+        "start": 23
+      },
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 39,
+        "rule": "qalqalah",
+        "start": 38
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_113\\113004.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 113,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_2",
+      "madd_2",
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 13,
+        "rule": "hamzat_wasl",
+        "start": 12
+      },
+      {
+        "end": 14,
+        "rule": "lam_shamsiyyah",
+        "start": 13
+      },
+      {
+        "end": 17,
+        "rule": "ghunnah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_2",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_2",
+        "start": 23
+      },
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 39,
+        "rule": "qalqalah",
+        "start": 38
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_113\\113004.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 113,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_2",
+      "madd_2",
+      "hamzat_wasl",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 13,
+        "rule": "hamzat_wasl",
+        "start": 12
+      },
+      {
+        "end": 14,
+        "rule": "lam_shamsiyyah",
+        "start": 13
+      },
+      {
+        "end": 17,
+        "rule": "ghunnah",
+        "start": 14
+      },
+      {
+        "end": 21,
+        "rule": "madd_2",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_2",
+        "start": 23
+      },
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 39,
+        "rule": "qalqalah",
+        "start": 38
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_113\\113005.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 113,
+    "ayah": 5,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_113\\113005.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 113,
+    "ayah": 5,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_113\\113005.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 113,
+    "ayah": 5,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_113\\113005.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 113,
+    "ayah": 5,
+    "tajweed_rules": [
+      "ikhfa",
+      "qalqalah"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "ikhfa",
+        "start": 4
+      },
+      {
+        "end": 31,
+        "rule": "qalqalah",
+        "start": 30
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114001.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 62,
+        "rule": "lam_shamsiyyah",
+        "start": 61
+      },
+      {
+        "end": 65,
+        "rule": "ghunnah",
+        "start": 62
+      },
+      {
+        "end": 66,
+        "rule": "madd_246",
+        "start": 65
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114001.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 62,
+        "rule": "lam_shamsiyyah",
+        "start": 61
+      },
+      {
+        "end": 65,
+        "rule": "ghunnah",
+        "start": 62
+      },
+      {
+        "end": 66,
+        "rule": "madd_246",
+        "start": 65
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114001.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 62,
+        "rule": "lam_shamsiyyah",
+        "start": 61
+      },
+      {
+        "end": 65,
+        "rule": "ghunnah",
+        "start": 62
+      },
+      {
+        "end": 66,
+        "rule": "madd_246",
+        "start": 65
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114001.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 1,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 61,
+        "rule": "hamzat_wasl",
+        "start": 60
+      },
+      {
+        "end": 62,
+        "rule": "lam_shamsiyyah",
+        "start": 61
+      },
+      {
+        "end": 65,
+        "rule": "ghunnah",
+        "start": 62
+      },
+      {
+        "end": 66,
+        "rule": "madd_246",
+        "start": 65
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114002.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 9,
+        "rule": "lam_shamsiyyah",
+        "start": 8
+      },
+      {
+        "end": 12,
+        "rule": "ghunnah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "madd_246",
+        "start": 12
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114002.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 9,
+        "rule": "lam_shamsiyyah",
+        "start": 8
+      },
+      {
+        "end": 12,
+        "rule": "ghunnah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "madd_246",
+        "start": 12
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114002.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 9,
+        "rule": "lam_shamsiyyah",
+        "start": 8
+      },
+      {
+        "end": 12,
+        "rule": "ghunnah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "madd_246",
+        "start": 12
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114002.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 2,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 8,
+        "rule": "hamzat_wasl",
+        "start": 7
+      },
+      {
+        "end": 9,
+        "rule": "lam_shamsiyyah",
+        "start": 8
+      },
+      {
+        "end": 12,
+        "rule": "ghunnah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "madd_246",
+        "start": 12
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114003.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 3,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 14,
+        "rule": "madd_246",
+        "start": 13
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114003.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 3,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 14,
+        "rule": "madd_246",
+        "start": 13
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114003.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 3,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 14,
+        "rule": "madd_246",
+        "start": 13
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114003.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 3,
+    "tajweed_rules": [
+      "madd_2",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 5,
+        "rule": "madd_2",
+        "start": 4
+      },
+      {
+        "end": 9,
+        "rule": "hamzat_wasl",
+        "start": 8
+      },
+      {
+        "end": 10,
+        "rule": "lam_shamsiyyah",
+        "start": 9
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 14,
+        "rule": "madd_246",
+        "start": 13
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114004.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 11,
+        "rule": "hamzat_wasl",
+        "start": 10
+      },
+      {
+        "end": 24,
+        "rule": "hamzat_wasl",
+        "start": 23
+      },
+      {
+        "end": 31,
+        "rule": "ghunnah",
+        "start": 28
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114004.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 11,
+        "rule": "hamzat_wasl",
+        "start": 10
+      },
+      {
+        "end": 24,
+        "rule": "hamzat_wasl",
+        "start": 23
+      },
+      {
+        "end": 31,
+        "rule": "ghunnah",
+        "start": 28
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114004.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 11,
+        "rule": "hamzat_wasl",
+        "start": 10
+      },
+      {
+        "end": 24,
+        "rule": "hamzat_wasl",
+        "start": 23
+      },
+      {
+        "end": 31,
+        "rule": "ghunnah",
+        "start": 28
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114004.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 4,
+    "tajweed_rules": [
+      "ikhfa",
+      "hamzat_wasl",
+      "hamzat_wasl",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "ikhfa",
+        "start": 2
+      },
+      {
+        "end": 11,
+        "rule": "hamzat_wasl",
+        "start": 10
+      },
+      {
+        "end": 24,
+        "rule": "hamzat_wasl",
+        "start": 23
+      },
+      {
+        "end": 31,
+        "rule": "ghunnah",
+        "start": 28
+      },
+      {
+        "end": 32,
+        "rule": "madd_246",
+        "start": 31
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114005.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 5,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 33,
+        "rule": "lam_shamsiyyah",
+        "start": 32
+      },
+      {
+        "end": 36,
+        "rule": "ghunnah",
+        "start": 33
+      },
+      {
+        "end": 37,
+        "rule": "madd_246",
+        "start": 36
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114005.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 5,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 33,
+        "rule": "lam_shamsiyyah",
+        "start": 32
+      },
+      {
+        "end": 36,
+        "rule": "ghunnah",
+        "start": 33
+      },
+      {
+        "end": 37,
+        "rule": "madd_246",
+        "start": 36
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114005.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 5,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 33,
+        "rule": "lam_shamsiyyah",
+        "start": 32
+      },
+      {
+        "end": 36,
+        "rule": "ghunnah",
+        "start": 33
+      },
+      {
+        "end": 37,
+        "rule": "madd_246",
+        "start": 36
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114005.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 5,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 32,
+        "rule": "hamzat_wasl",
+        "start": 31
+      },
+      {
+        "end": 33,
+        "rule": "lam_shamsiyyah",
+        "start": 32
+      },
+      {
+        "end": 36,
+        "rule": "ghunnah",
+        "start": 33
+      },
+      {
+        "end": 37,
+        "rule": "madd_246",
+        "start": 36
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_Muallim_128kbps\\surah_114\\114006.mp3",
+    "reciter": "Husary_Muallim_128kbps",
+    "surah": 114,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "ghunnah",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "hamzat_wasl",
+        "start": 5
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 19,
+        "rule": "hamzat_wasl",
+        "start": 18
+      },
+      {
+        "end": 20,
+        "rule": "lam_shamsiyyah",
+        "start": 19
+      },
+      {
+        "end": 23,
+        "rule": "ghunnah",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_246",
+        "start": 23
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Husary_128kbps_Mujawwad\\surah_114\\114006.mp3",
+    "reciter": "Husary_128kbps_Mujawwad",
+    "surah": 114,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "ghunnah",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "hamzat_wasl",
+        "start": 5
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 19,
+        "rule": "hamzat_wasl",
+        "start": 18
+      },
+      {
+        "end": 20,
+        "rule": "lam_shamsiyyah",
+        "start": 19
+      },
+      {
+        "end": 23,
+        "rule": "ghunnah",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_246",
+        "start": 23
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Minshawy_Mujawwad_192kbps\\surah_114\\114006.mp3",
+    "reciter": "Minshawy_Mujawwad_192kbps",
+    "surah": 114,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "ghunnah",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "hamzat_wasl",
+        "start": 5
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 19,
+        "rule": "hamzat_wasl",
+        "start": 18
+      },
+      {
+        "end": 20,
+        "rule": "lam_shamsiyyah",
+        "start": 19
+      },
+      {
+        "end": 23,
+        "rule": "ghunnah",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_246",
+        "start": 23
+      }
+    ]
+  },
+  {
+    "audio_path": "data\\training\\audio\\Abdul_Basit_Mujawwad_128kbps\\surah_114\\114006.mp3",
+    "reciter": "Abdul_Basit_Mujawwad_128kbps",
+    "surah": 114,
+    "ayah": 6,
+    "tajweed_rules": [
+      "hamzat_wasl",
+      "ghunnah",
+      "hamzat_wasl",
+      "lam_shamsiyyah",
+      "ghunnah",
+      "madd_246"
+    ],
+    "annotations": [
+      {
+        "end": 6,
+        "rule": "hamzat_wasl",
+        "start": 5
+      },
+      {
+        "end": 13,
+        "rule": "ghunnah",
+        "start": 10
+      },
+      {
+        "end": 19,
+        "rule": "hamzat_wasl",
+        "start": 18
+      },
+      {
+        "end": 20,
+        "rule": "lam_shamsiyyah",
+        "start": 19
+      },
+      {
+        "end": 23,
+        "rule": "ghunnah",
+        "start": 20
+      },
+      {
+        "end": 24,
+        "rule": "madd_246",
+        "start": 23
+      }
+    ]
+  }
+]

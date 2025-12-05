@@ -2,6 +2,7 @@
 Progress tracking routes for Qari App
 User statistics, session history, learning progress
 """
+
 from fastapi import APIRouter, Depends, Query
 from typing import List, Optional
 from datetime import datetime, timedelta
@@ -77,11 +78,11 @@ def get_or_create_user_stats(user_id: str) -> dict:
 async def get_user_stats(current_user: TokenData = Depends(get_current_user)):
     """Get overall user statistics."""
     stats = get_or_create_user_stats(current_user.user_id)
-    
+
     scores = stats["scores"]
     avg_score = sum(scores) / len(scores) if scores else 0.0
     best_score = max(scores) if scores else 0.0
-    
+
     return UserStats(
         total_sessions=stats["total_sessions"],
         total_practice_time=stats["total_practice_time"],
@@ -101,16 +102,15 @@ async def get_session_history(
 ):
     """Get user's session history."""
     user_sessions = [
-        s for s in sessions_db.values() 
-        if s.get("user_id") == current_user.user_id
+        s for s in sessions_db.values() if s.get("user_id") == current_user.user_id
     ]
-    
+
     # Sort by timestamp descending
     user_sessions.sort(key=lambda x: x["timestamp"], reverse=True)
-    
+
     # Paginate
-    paginated = user_sessions[offset:offset + limit]
-    
+    paginated = user_sessions[offset : offset + limit]
+
     return [
         SessionSummary(
             session_id=s["session_id"],
@@ -136,7 +136,7 @@ async def get_error_progress(current_user: TokenData = Depends(get_current_user)
         ("qalqalah_missing", 12, 8),
         ("idgham_missing", 8, 5),
     ]
-    
+
     return [
         ProgressByError(
             error_type=error_type,
@@ -156,32 +156,35 @@ async def get_daily_progress(
     """Get daily progress for the last N days."""
     progress = []
     today = datetime.utcnow().date()
-    
+
     for i in range(days):
         date = today - timedelta(days=i)
         date_str = date.isoformat()
-        
+
         # Count sessions for this day
         day_sessions = [
-            s for s in sessions_db.values()
+            s
+            for s in sessions_db.values()
             if s.get("user_id") == current_user.user_id
             and s["timestamp"].date() == date
         ]
-        
+
         if day_sessions:
             avg_score = sum(s["score"] for s in day_sessions) / len(day_sessions)
             total_time = sum(s.get("duration", 30) for s in day_sessions)
         else:
             avg_score = 0
             total_time = 0
-        
-        progress.append(DailyProgress(
-            date=date_str,
-            sessions=len(day_sessions),
-            average_score=round(avg_score, 2),
-            practice_time=total_time,
-        ))
-    
+
+        progress.append(
+            DailyProgress(
+                date=date_str,
+                sessions=len(day_sessions),
+                average_score=round(avg_score, 2),
+                practice_time=total_time,
+            )
+        )
+
     return progress
 
 
@@ -190,11 +193,11 @@ async def get_surah_progress(current_user: TokenData = Depends(get_current_user)
     """Get progress by surah."""
     # Aggregate sessions by surah
     surah_data: dict = {}
-    
+
     for session in sessions_db.values():
         if session.get("user_id") != current_user.user_id:
             continue
-        
+
         surah = session["surah"]
         if surah not in surah_data:
             surah_data[surah] = {
@@ -202,14 +205,16 @@ async def get_surah_progress(current_user: TokenData = Depends(get_current_user)
                 "scores": [],
                 "last_practiced": None,
             }
-        
+
         surah_data[surah]["ayahs"].add(session["ayah"])
         surah_data[surah]["scores"].append(session["score"])
-        
-        if (surah_data[surah]["last_practiced"] is None or 
-            session["timestamp"] > surah_data[surah]["last_practiced"]):
+
+        if (
+            surah_data[surah]["last_practiced"] is None
+            or session["timestamp"] > surah_data[surah]["last_practiced"]
+        ):
             surah_data[surah]["last_practiced"] = session["timestamp"]
-    
+
     return [
         SurahProgress(
             surah=surah,
@@ -233,7 +238,7 @@ async def record_session(
     """Record a practice session (called internally after analysis)."""
     session_id = str(uuid.uuid4())
     timestamp = datetime.utcnow()
-    
+
     session = {
         "session_id": session_id,
         "user_id": current_user.user_id,
@@ -245,18 +250,18 @@ async def record_session(
         "timestamp": timestamp,
     }
     sessions_db[session_id] = session
-    
+
     # Update user stats
     stats = get_or_create_user_stats(current_user.user_id)
     stats["total_sessions"] += 1
     stats["total_practice_time"] += duration
     stats["scores"].append(score)
     stats["last_practice"] = timestamp
-    
+
     # Update streak
     today = timestamp.date()
     stats["practice_dates"].add(today)
-    
+
     # Calculate streak
     streak = 0
     check_date = today
@@ -264,5 +269,5 @@ async def record_session(
         streak += 1
         check_date -= timedelta(days=1)
     stats["streak_days"] = streak
-    
+
     return {"session_id": session_id, "recorded": True}

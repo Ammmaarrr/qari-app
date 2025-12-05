@@ -10,5 +10,5 @@ async def get_correction_audio(correction_id: str):
         "id": correction_id,
         "audio_url": f"https://example.com/corrections/{correction_id}.mp3",
         "letter": "ق",
-        "description": "Correct pronunciation of Qaf"
+        "description": "Correct pronunciation of Qaf",
     }

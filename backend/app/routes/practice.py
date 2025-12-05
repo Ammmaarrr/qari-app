@@ -1,14 +1,19 @@
 """
 Practice session routes for repetition loop
 """
+
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List, Optional
 from pydantic import BaseModel
 from ..auth import get_current_user, TokenData
 from ..services.spaced_repetition import (
-    PracticeItem, ReviewResult,
-    get_due_items, process_review, get_user_stats,
-    add_errors_to_practice, get_recommended_practice,
+    PracticeItem,
+    ReviewResult,
+    get_due_items,
+    process_review,
+    get_user_stats,
+    add_errors_to_practice,
+    get_recommended_practice,
 )
 
 router = APIRouter(prefix="/api/v1/practice", tags=["practice"])
@@ -49,7 +54,7 @@ async def submit_review(
             response_time=review.response_time,
         )
         updated_item = process_review(result)
-        
+
         return {
             "success": True,
             "item": updated_item.dict(),
@@ -98,22 +103,22 @@ async def remove_practice_item(
 ):
     """Remove a practice item (mark as mastered)."""
     from ..services.spaced_repetition import practice_items_db, user_queues_db
-    
+
     if item_id not in practice_items_db:
         raise HTTPException(status_code=404, detail="Item not found")
-    
+
     # Verify ownership
     item = practice_items_db[item_id]
     if item["user_id"] != current_user.user_id:
         raise HTTPException(status_code=403, detail="Not authorized")
-    
+
     # Remove from database
     del practice_items_db[item_id]
-    
+
     # Remove from user queue
     if current_user.user_id in user_queues_db:
         user_queues_db[current_user.user_id] = [
             i for i in user_queues_db[current_user.user_id] if i != item_id
         ]
-    
+
     return {"success": True, "removed": item_id}

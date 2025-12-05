@@ -16,7 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import RNFS from 'react-native-fs';
-import { uploadRecording } from '../services/api';
+import { analysisApi } from '../services/api';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
@@ -27,12 +27,12 @@ interface RecordScreenProps {
 
 const RecordScreen: React.FC<RecordScreenProps> = ({ navigation, route }) => {
   const { surah, ayah } = route.params || {};
-  
+
   const [isRecording, setIsRecording] = useState(false);
   const [recordTime, setRecordTime] = useState('00:00');
   const [recordPath, setRecordPath] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  
+
   // Animation for recording indicator
   const pulseAnim = useRef(new Animated.Value(1)).current;
 
@@ -61,17 +61,17 @@ const RecordScreen: React.FC<RecordScreenProps> = ({ navigation, route }) => {
   const startRecording = async () => {
     try {
       const path = `${RNFS.CachesDirectoryPath}/recitation_${Date.now()}.wav`;
-      
+
       const result = await audioRecorderPlayer.startRecorder(path, {
-        SampleRate: 16000,
-        Channels: 1,
-        AudioEncoding: 'lpcm',
-      });
-      
+        sampleRate: 16000,
+        channels: 1,
+        encoderBitRate: 128000,
+      } as any);
+
       audioRecorderPlayer.addRecordBackListener((e) => {
         setRecordTime(audioRecorderPlayer.mmssss(Math.floor(e.currentPosition)));
       });
-      
+
       setRecordPath(result);
       setIsRecording(true);
     } catch (error) {
@@ -86,7 +86,7 @@ const RecordScreen: React.FC<RecordScreenProps> = ({ navigation, route }) => {
       audioRecorderPlayer.removeRecordBackListener();
       setIsRecording(false);
       setRecordPath(result);
-      
+
       // Ask user to analyze or re-record
       Alert.alert(
         'Recording Complete',
@@ -103,15 +103,15 @@ const RecordScreen: React.FC<RecordScreenProps> = ({ navigation, route }) => {
 
   const analyzeRecording = async (audioPath: string) => {
     setIsAnalyzing(true);
-    
+
     try {
       // Get user ID from storage (simplified - use actual auth in production)
       const userId = 'user-' + Date.now();
-      
-      const result = await uploadRecording(audioPath, userId, surah, ayah);
-      
+
+      const result = await analysisApi.analyzeRecording(audioPath, surah, ayah);
+
       setIsAnalyzing(false);
-      
+
       // Navigate to results screen
       navigation.navigate('Results', {
         analysisResult: result,
@@ -164,7 +164,7 @@ const RecordScreen: React.FC<RecordScreenProps> = ({ navigation, route }) => {
       <View style={styles.recordingArea}>
         {/* Timer */}
         <Text style={styles.timer}>{recordTime}</Text>
-        
+
         {/* Recording Status */}
         <Text style={styles.status}>
           {isRecording ? 'Recording...' : 'Tap to start'}
